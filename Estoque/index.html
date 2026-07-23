@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Estoque da loja</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <h1 id="titulo">Gerenciar itens</h1>
+
+    <!-- Inputs e seus labels -->
+    <div id="container-inputs">
+        <label>Nome</label>
+        <input type="text" id="input-nome">
+    </div>
+    <div id="container-inputs">
+        <label>Marca</label>
+        <input type="text" id="input-marca">
+    </div>
+    <div id="container-inputs">
+        <label>valor</label>
+        <input type="number" id="input-valor">
+    </div>
+    <div id="container-inputs">
+        <label>Estoque</label>
+        <input type="number" id="input-estoque">
+    </div>
+    <div id="container-inputs">
+        <label>Avaliação</label>
+        <input type="number" id="input-avaliacao">
+    </div>
+    <div id="container-inputs">
+        <label>ID</label>
+        <input type="number" id="input-id">
+    </div>
+
+    <!-- Botões -->
+    <button onclick="AdicionarProduto()">Adicionar produto</button>
+    <button onclick="removerProduto()">Remover produto</button>
+    <button onclick="procurarProduto()">Procurar um produto</button>
+    <button onclick="atualizarProduto()">Atualizar dados do produto</button>
+    <button onclick="alterarEstoque()">Somar estoque</button>
+    <input placeholder="Quantia" type="number" id="input-alterarEstoque">
+
+
+    <hr>
+
+    <h1>Estoque</h1>
+
+    <div id="lista-produtos">
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
