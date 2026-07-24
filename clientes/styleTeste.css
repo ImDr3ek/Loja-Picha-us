@@ -1,0 +1,61 @@
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.tela{
+    display: none;
+    
+}
+.ativa{
+    display: block;
+
+}
+
+.Topico{
+    margin-bottom: 50px;
+    margin-top: 20px;
+   width: 450px;  
+ 
+}
+
+ header {
+  background-color: #a51a01;
+  padding: 10px;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+   }
+
+nav .btn{
+
+     width: fit-content;
+    margin: 60px auto;
+    border-style: groove;
+     margin-bottom: 20px;
+    margin-top: 20px;
+    
+    }
+
+    button{
+        margin: 0 10px;
+    padding: 5.5px 10px;
+    cursor: pointer;
+
+    }
+
+    button:hover{
+
+    scale: 1.05;   
+    border-radius: 7px;
+}
+
+#btnIn button{
+    background-color: #00000000;
+    border: none;
+}

@@ -53,9 +53,9 @@ const produtos = [
 ];
 
 function ativarProdutos() {
-    document.getElementById('lista-precos').innerHTML = ''
+    document.getElementById('produtos-precos').innerHTML = ''
     for (let i = 0; i < produtos.length; i++) {
-        document.getElementById('lista-precos').innerHTML += '<button  onclick= "agregarNoCarrinho(' + 
+        document.getElementById('produtos-precos').innerHTML += '<button  onclick= "agregarNoCarrinho(' + 
         produtos[i].id + ')" class="produtos" id="p' + produtos[i].id + 
         '"> ' + produtos[i].nome + '</button>'
     }
@@ -70,14 +70,20 @@ function agregarNoCarrinho(id) {
     console.log("valor " + valor);
     total = total + valor;
     console.log("Valor total:" + total);
-        document.getElementById('totalVendido').innerHTML = 'Total de vendas: R$' + total.toFixed(2);
-    document.getElementById('listaVendas').innerHTML += 'produto:' + produtos[id].nome + " " + "R$" + produtos[id].preco +
-    '<br>'
-    document.getElementById('listaVendas').value = ''
     
 }
 
-function removerProdutos(){
-    let i = produtos.indexOf(prompt('Qual produto quer remover'))
+function mostrarCarrinho(id){
+    
+    document.getElementById('totalVendido').innerHTML = 'Total de vendas: R$' + total.toFixed(2);
+    document.getElementById('listaVendas').innerHTML += 'produto:' + produtos[id].nome + " " + "R$" + produtos[id].preco +
+    '<br>'
+    document.getElementById('listaVendas').value = ''
+
 
 }
+
+// function removerProdutos(){
+//     let i = produtos.indexOf(prompt('Qual produto quer remover'))
+
+// }
