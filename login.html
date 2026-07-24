@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="logincss.css">
+    <title>Login</title>
+</head>
+<header>
+
+</header>
+
+<body>
+    <section class="tela ativa" id="section-cadastro">
+        <div class="pag-cadastros">
+            <div class="div-inputs">
+                <input type="text" id="input-nome" class="inputs" required placeholder="Nome*">
+            </div>
+            <div class="div-inputs">
+                <input type="text" id="input-sobrenome" class="inputs" required placeholder="Sobrenome*">
+            </div>
+            <div class="div-inputs">
+                <input type="email" id="input-email" class="inputs" required placeholder="Email*">
+            </div>
+            <div class="div-inputs">
+                <input type="password" id="input-senha" class="inputs" required placeholder="Senha*">
+            </div>
+            <div class="div-inputs">
+                <input type="password" id="input-confirmarSenha" class="inputs" required placeholder="Confirmar Senha*">
+            </div>
+            <div class="div-inputs">
+                <label class="labels">Data de nascimento:</label>
+                <input type="date" id="input-nascimento" class="inputs">
+            </div>
+            <div class="div-inputs">
+                <label class="labels">Termos:</label>
+                <input type="checkbox" id="termos">
+            </div>
+            <div>
+                <span id="aviso-cadastro"></span>
+            </div>
+            <div class="btn">
+                <button onclick="cadastrarUsuarios()" class="btn-login">cadastrar</button>
+                <button onclick="telaLogin()" class="btn-login">Mudar tela</button>
+            </div>
+        </div>
+    </section>
+
+    <section class="tela" id="section-login">
+        <div class="pag-cadastros">
+            <div>
+                <label class="labels">Email:</label>
+                <input type="text" id="input-login-email" class="inputs">
+            </div>
+            <div>
+                <label class="labels">Senha:</label>
+                <input type="password" id="input-login-senha" class="inputs">
+            </div>
+            <span id="aviso-login"></span>
+            <div class="btn">
+                <button onclick="entrarNoSite()" class="btn-login">Login</button>
+            </div>
+        </div>
+    </section>
+
+
+    <script src="loginscript.js"></script>
+</body>
+
+</html>

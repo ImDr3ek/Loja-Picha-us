@@ -1,0 +1,33 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+.tela {
+    display: none;
+}
+
+.ativa {
+    display: block;
+}
+.pag-cadastros {
+    display: flex;
+    flex-direction: column;
+    max-width: 100%;
+    align-items: center;
+    justify-content: center;
+    padding-top: 15%;
+}
+.inputs {
+    max-width: 500px;
+    height: 25px;
+}
+/* .btn-login{
+    display: flex;
+    background-color: red;
+    border-radius: ;
+    color: rgb(255, 255, 255);
+}
+.btn-login:hover{
+    cursor: pointer;
+} */
