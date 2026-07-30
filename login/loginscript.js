@@ -53,7 +53,7 @@ function telaCadastroAdm() {
         mudarTela()
         document.getElementById("section-cadastroAdm").classList.add("ativa")
 
-    } 
+    }
 
 }
 
@@ -100,49 +100,49 @@ function cadastrarAdm() {
 }
 
 function cadastrarUsuarios() {
-    
+
     let confirmarSenha = document.getElementById("input-confirmarSenha").value
-    
+
     let novoUsuario = {
-        
+
         id: Date.now(),
         nomeDoUsuario: document.getElementById("input-nome").value,
         sobrenomeDoUsuario: document.getElementById("input-sobrenome").value,
         email: document.getElementById("input-email").value,
         senha: document.getElementById("input-senha").value,
         dataDeNascimento: document.getElementById("input-nascimento").value,
-        
+
     }
-    
+
     if (novoUsuario.senha == confirmarSenha) {
-        
+
         if (novoUsuario.nomeDoUsuario != "" && novoUsuario.sobrenomeDoUsuario != ""
             && novoUsuario.email != "" && novoUsuario.senha != "" &&
             novoUsuario.dataDeNascimento != "") {
-                
-                document.getElementById("aviso-cadastro").innerHTML = ""
-                usuarios.push(novoUsuario)
-                telaLogin()
-                
-            }
-            
-            else {
-                
-                document.getElementById("aviso-cadastro").innerHTML = "Preencha seus dados"
-                
-            }
-            
+
+            document.getElementById("aviso-cadastro").innerHTML = ""
+            usuarios.push(novoUsuario)
+            telaLogin()
+
         }
-        
+
         else {
-            
-            document.getElementById("aviso-cadastro").innerHTML = "Senha errada"
-            
+
+            document.getElementById("aviso-cadastro").innerHTML = "Preencha seus dados"
+
         }
-        
-        salvar()
-        limparFormulario()
-        console.log(usuarios)
+
+    }
+
+    else {
+
+        document.getElementById("aviso-cadastro").innerHTML = "Senha errada"
+
+    }
+
+    salvar()
+    limparFormulario()
+    console.log(usuarios)
 }
 
 function entrarNoSite() {
@@ -156,7 +156,6 @@ function entrarNoSite() {
 
         if (loginEmail == usuarios[i].email && loginsenha == usuarios[i].senha) {
 
-            localStorage.setItem("usuarioLogado", loginEmail)
             window.location = "http://127.0.0.1:5500/Loja-Picha-us/principal/index.html"
 
         }
@@ -190,16 +189,19 @@ function excluirConta() {
 
     carregarDados()
 
+    document.getElementById("aviso-excluir").innerHTML = ""
+
     let nome = document.getElementById("input-nome-excluir").value
     let email = document.getElementById("input-login-email-excluir").value
     let senha = document.getElementById("input-login-senha-excluir").value
 
+
     for (i = 0; i < usuarios.length; i++) {
 
-        if (nome == usuarios[i].nome && email == usuarios[i].email && email == usuarios[i].senha) {
+        if (nome == usuarios[i].nomeDoUsuario && email == usuarios[i].email && usuarios[i].senha) {
 
             usuarios.splice(i, 1)
-
+  
         }
 
         else {
@@ -207,7 +209,9 @@ function excluirConta() {
             document.getElementById("aviso-excluir").innerHTML = "Preencha seus dados"
 
         }
-    }
+    }   
+
+
     for (i = 0; i < adms.length; i++) {
 
         if (nome == adms[i].nomeAdm && email == adms[i].emailAdm && senha == adms[i].senhaAdm) {
@@ -221,8 +225,10 @@ function excluirConta() {
             document.getElementById("aviso-excluir").innerHTML = "Preencha seus dados"
 
         }
-    }
 
+    }
+    console.log(usuarios)
+    console.log(adms)
     salvar()
     limparFormulario()
 }
@@ -272,39 +278,42 @@ function testar() {
 
     usuarios = [
         {
-            nome: "Lucas", sobrenome: "Mendes",
+            nomeDoUsuario: "Lucas",
+            sobrenomeDoUsuario: "Mendes",
             email: "lucas.mendes@email.com",
             senha: "userPass123",
             dataDeNascimento: "1995-04-12"
         },
         {
-            nome: "Juliana", sobrenome: "Rocha",
+            nomeDoUsuario: "Juliana",
+            sobrenomeDoUsuario: "Rocha",
             email: "juliana.rocha@email.com",
             senha: "senhaUsuario456",
             dataDeNascimento: "1998-09-25"
         },
         {
-            nome: "Gabriel", sobrenome: "Martins",
+            nomeDoUsuario: "Gabriel",
+            sobrenomeDoUsuario: "Martins",
             email: "gabriel.martins@email.com",
             senha: "abcUser789*",
             dataDeNascimento: "1990-12-03"
         },
         {
-            nome: "Camila",
-            sobrenome: "Duarte",
+            nomeDoUsuario: "Camila",
+            sobrenomeDoUsuario: "Duarte",
             email: "camila.duarte@email.com",
             senha: "cliente2026#",
             dataDeNascimento: "2001-07-15"
         },
         {
-            nome: "Rafael",
-            sobrenome: "Lindemman",
+            nomeDoUsuario: "Rafael",
+            sobrenomeDoUsuario: "Lindemman",
             email: "rafael.lindemman@email.com",
             senha: "minhaSenha321",
             dataDeNascimento: "1988-02-20"
         }
     ];
-    
+
     salvar()
     limparFormulario()
     console.log(adms)
@@ -333,7 +342,7 @@ function limparFormulario() {
 function puxarDados() {
 
     carregarDados()
-    
+
     let buscar = document.getElementById("input-nome-editar").value
 
     for (i = 0; i < usuarios.length; i++) {
@@ -355,12 +364,14 @@ function puxarDados() {
         }
 
     }
-    
+    console.log(usuarios)
+    console.log(adms)
+
 }
 
-function editar(){
+function editar() {
 
-    carregarDados()
+
 
     let alterar = document.getElementById("input-nome-editar").value
     let alterar2 = document.getElementById("input-sobrenome-editar").value
@@ -368,24 +379,26 @@ function editar(){
     let alterar4 = document.getElementById("input-senha-editar").value
 
     for (i = 0; i < usuarios.length; i++) {
-    
-        if (alterar == usuarios[i].nome) {
-            usuarios[i].nome = alterar
-            usuarios[i].sobrenome = alterar2
+
+        if (alterar == usuarios[i].nomeDoUsuario) {
+            usuarios[i].nomeDoUsuario = alterar
+            usuarios[i].sobrenomeDoUsuario = alterar2
             usuarios[i].email = alterar3
             usuarios[i].senha = alterar4
         }
-    
+
     }
     for (i = 0; i < adms.length; i++) {
-    
+
         if (alterar == adms[i].nomeAdm) {
             adms[i].nomeAdm = alterar
             adms[i].emailAdm = alterar3
             adms[i].senhaAdm = alterar4
         }
-    
-    }
 
+    }
     salvar()
+    carregarDados()
+    console.log(usuarios)
+    console.log(adms)
 }
