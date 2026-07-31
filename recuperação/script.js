@@ -1,3 +1,4 @@
+let inputNome = document.getElementById("input-nome")
 function testar(){
     carregarDados()
 
@@ -42,7 +43,6 @@ function testar(){
     console.log(estoque)
 
 }
-let inputNome = document.getElementById("input-nome")
 let inputTipo = document.getElementById("input-tipo")
 let inputValor = document.getElementById("input-valor")
 let inputShiny = document.getElementById("input-shiny")

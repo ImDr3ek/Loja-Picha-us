@@ -8,72 +8,172 @@
     <title>Login</title>
 </head>
 
-    <header>
-        <button onclick="telaInicial()" id="btn-foto"><img src="Gemini_Generated_Image_ttbcifttbcifttbc-removebg-preview.png" id="foto"></button>
-    </header>
-    
-    <body>
+<header>
+    <button onclick="telaInicial()" id="btn-foto"><img
+            src="Gemini_Generated_Image_ttbcifttbcifttbc-removebg-preview.png" id="foto"></button>
+</header>
+
+<body>
 
     <section class="tela ativa" id="section-login">
+
         <div class="pag-cadastros">
+
             <div>
                 <input type="text" id="input-login-email" class="inputs" required placeholder="Email*">
             </div>
+
             <div>
                 <input type="password" id="input-login-senha" class="inputs" required placeholder="Senha*">
             </div>
+
             <span id="aviso-login"></span>
+
             <div class="btn">
-                <button onclick="entrarNoSite()" class="btn-login" >Login</button>
+                <button onclick="entrarNoSite()" class="btn-login">Login</button>
                 <button onclick="telaCadastro()" class="btn-login">Cadastrar</button>
+                <button onclick="telaCadastroAdm()" class="btn-login">Cadastrar ADM</button>
+                <button onclick="telaExcluir()" class="btn-login">Excluir conta</button>
+                <button onclick="telaEditar()" class="btn-login">Editar cadastro</button>
+                <button onclick="testar()" class="btn-login">Testar</button>
             </div>
+
         </div>
+
     </section>
 
     <section class="tela" id="section-cadastro">
+
         <div class="pag-cadastros">
+
             <div class="div-inputs">
                 <input type="text" id="input-nome" class="inputs" required placeholder="Nome*">
             </div>
+
             <div class="div-inputs">
                 <input type="text" id="input-sobrenome" class="inputs" required placeholder="Sobrenome*">
             </div>
+
             <div class="div-inputs">
                 <input type="email" id="input-email" class="inputs" required placeholder="Email*">
             </div>
+
             <div class="div-inputs">
                 <input type="password" id="input-senha" class="inputs" required placeholder="Senha*">
             </div>
+
             <div class="div-inputs">
                 <input type="password" id="input-confirmarSenha" class="inputs" required placeholder="Confirmar Senha*">
             </div>
+
             <div class="div-inputs">
                 <label class="labels">Data de nascimento:</label>
-                <input type="date"  class="inputs" id="input-nascimento">
+                <input type="date" class="inputs" id="input-nascimento">
             </div>
-            <div class="div-inputs">
-                <label class="labels">Termos:</label>
-                <input type="checkbox" id="termos">
-            </div>
+
             <div>
                 <span id="aviso-cadastro"></span>
             </div>
+
             <div class="btn">
                 <button onclick="cadastrarUsuarios()" class="btn-login">Cadastrar</button>
                 <button onclick="telaLogin()" class="btn-login">Voltar</button>
             </div>
+
         </div>
+
     </section>
 
     <section id="section-cadastroAdm" class="tela">
+
+        <div class="pag-cadastros">
+
+            <div class="div-inputs">
+                <input type="text" id="input-nomeAdm" class="inputs" required placeholder="Nome*">
+            </div>
+
+            <div class="div-inputs">
+                <input type="email" id="input-emailAdm" class="inputs" required placeholder="Email*">
+            </div>
+
+            <div class="div-inputs">
+                <input type="password" id="input-senhaAdm" class="inputs" required placeholder="Senha*">
+            </div>
+
+            <div class="div-inputs">
+                <input type="password" id="input-confirmarSenhaAdm" class="inputs" required
+                    placeholder="Confirmar Senha*">
+            </div>
+
+            <div>
+                <span id="aviso-cadastroAdm"></span>
+            </div>
+
+            <div class="btn">
+                <button onclick="cadastrarAdm()" class="btn-login">Cadastrar Adm</button>
+                <button onclick="telaLogin()" class="btn-login">Voltar</button>
+            </div>
 
     </section>
 
     <section id="section-excluir" class="tela">
 
+        <div class="pag-cadastros">
+
+            <div class="div-inputs">
+                <input type="text" id="input-nome-excluir" class="inputs" required placeholder="Nome*">
+            </div>
+
+            <div>
+                <input type="text" id="input-login-email-excluir" class="inputs" required placeholder="Email*">
+            </div>
+
+            <div>
+                <input type="password" id="input-login-senha-excluir" class="inputs" required placeholder="Senha*">
+            </div>
+
+            <span id="aviso-excluir"></span>
+
+            <div class="btn">
+                <button onclick="excluirConta()" class="btn-login">Excluir conta</button>
+                <button onclick="telaLogin()" class="btn-login">Voltar</button>
+            </div>
+
+        </div>
+
     </section>
-    
-    
+
+    <section class="tela" id="section-editar">
+
+        <div class="pag-cadastros">
+
+            <div class="div-inputs">
+                <input type="text" id="input-nome-editar" class="inputs" required placeholder="Nome*">
+            </div>
+
+            <div class="div-inputs">
+                <input type="text" id="input-sobrenome-editar" class="inputs" required placeholder="Sobrenome*">
+            </div>
+
+            <div class="div-inputs">
+                <input type="email" id="input-email-editar" class="inputs" required placeholder="Email*">
+            </div>
+
+            <div class="div-inputs">
+                <input type="password" id="input-senha-editar" class="inputs" required placeholder="Senha*">
+            </div>
+
+            <div class="btn">
+                <button onclick="puxarDados()" class="btn-login">Puxar cadastro</button>
+                <button onclick="editar()" class="btn-login">Editar cadastro</button>
+                <button onclick="telaLogin()" class="btn-login">Voltar</button>
+            </div>
+
+        </div>
+
+    </section>
+
+
     <script src="loginscript.js"></script>
 </body>
 
